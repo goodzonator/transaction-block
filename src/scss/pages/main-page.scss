@@ -1,0 +1,431 @@
+.transaction {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 35px 40px 40px 40px;
+    background: $white;
+    border-radius: 26px;
+    user-select: none;
+
+    &__info {
+        flex-grow: 1;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        & > * {
+            width: calc(33.33% - 31px);
+            max-width: 165px;
+        }
+    }
+
+    &__agreement {
+        margin-right: 67px;
+    }
+
+    &__info-list {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 28px;
+            }
+
+            &:has(.transaction__pay-date) {
+                margin-bottom: 12px;
+            }
+
+            > span {
+                display: block;
+
+                &:first-child {
+                    margin-bottom: 4px;
+                    font-family: $font-family-second;
+                    color: $grey;
+                }
+
+                &:last-child {
+                    font-weight: 600;
+                    line-height: 16px;
+
+                    &:has(> .additional-info) {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                }
+            }
+
+            .additional-info {
+                position: relative;
+                cursor: pointer;
+                &:hover .additional-info__content {
+                    display: block;
+                }
+                &__content {
+                    display: none;
+                    position: absolute;
+                    z-index: 1;
+                    top: 100%;
+                    margin-top: 5px;
+                    left: -40px;
+                    width: 160px;
+                    font-family: $font-family-second;
+                    padding: 6px;
+                    color: $grey;
+                    font-size: 10px;
+                    line-height: 14px;
+                    font-weight: 400;
+                    background: $white;
+                    border-radius: 6px;
+                    box-shadow: 0 2px 3px rgba(0,0,0,.25);
+                }
+            }
+        }
+    }
+
+    &__cost {
+        margin-right: 26px;
+        h2 {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+    }
+
+    &__total {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 29px;
+        padding-top: 26px;
+        color: #999894;
+        border-top: 1px solid #F4F3F0;
+        .title {
+            font-family: $font-family-second;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .price {
+            margin-left: 126px;
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 600;
+            color: $primary-color;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__currency {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        margin-top: 4px;
+        padding: 2px;
+        background: #F4F3F0;
+        border-radius: 5px;
+
+        input {
+            display: none;
+
+            &:checked + label {
+                color: $primary-color;
+                background: #fff;
+                opacity: 1;
+            }
+        }
+
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            color: $dark;
+            opacity: .3;
+            transition: all .3s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__pay-date {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        margin-top: .5px;
+        margin-left: -11px;
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 107px;
+            height: 17.5px;
+            padding-bottom: 1px;
+            text-align: center;
+            font-family: $font-family-second;
+            font-size: 8px;
+            line-height: 10px;
+            font-weight: 400;
+            color: $primary-color;
+            background: url("../images/pay-bg.png") no-repeat;
+            background-size: cover !important;
+        }
+    }
+
+    &__files {
+        padding-top: 67px;
+        font-family: $font-family-second;
+        font-size: 11px;
+        line-height: 14px;
+        a {
+            display: inline-flex;
+            align-items: flex-end;
+            gap: 11px;
+            position: relative;
+            padding-bottom: 4px;
+            font-weight: 500;
+            color: $primary-color;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 22px;
+                width: calc(100% - 22px);
+                border-bottom: 1px solid $primary-color;
+                border-radius: 10px;
+                transition: all .3s;
+            }
+            &:hover:before {
+                opacity: 0;
+            }
+            &:not(:last-child) {
+                margin-bottom: 46px;
+            }
+            &.dots:before {
+                border-bottom: 1px dotted $primary-color;
+            }
+        }
+    }
+
+    &-reservation {
+        width: 528px;
+        flex-shrink: 0;
+        margin-top: 5px;
+        border: 1px solid #E8E6E0;
+        border-radius: 14px;
+        overflow: hidden;
+        &__head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 9px 16px 10px 31px;
+            background: #E8E6E0;
+            h3 {
+                font-size: 11px;
+                line-height: 14px;
+                font-weight: 500;
+            }
+            & > div {
+                display: flex;
+                height: 20px;
+                font-size: 10px;
+                line-height: 13px;
+                font-weight: 500;
+                color: $primary-color;
+                background: rgba(255,255,255,.3);
+                border-radius: 5px;
+                .steps {
+                    padding: 4px 9px 3px 8px;
+                    border-right: 1px solid #E8E6E0;
+                }
+                .title {
+                    padding: 4px 17px 3px 8px;
+                }
+                .settings {
+                    height: 100%;
+                    padding: 0 8px;
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+        }
+        &__content {
+            padding: 47px 31px 49px;
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 24px;
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                    padding-bottom: 6px;
+                    border-bottom: 1px solid #F4F3F0;
+                    span {
+                        padding-top: 12px;
+                    }
+                }
+                &:last-child {
+                    span {
+                        line-height: 24px;
+                    }
+                    a {
+                        margin-top: 2px;
+                    }
+                }
+                > span {
+                    font-size: 16px;
+                    line-height: 20.66px;
+                    font-family: $font-family-second;
+                    .main-color {
+                        font-weight: 500;
+                        color: $primary-color;
+                    }
+                }
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                    width: 186px;
+                    height: 48px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: $white;
+                    background: $dark;
+                    border-radius: 8px;
+                    &:hover {
+                        background-color: #3a3a2c;
+                    }
+                    svg {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1279px) {
+        &__agreement, &__cost {
+            margin-right: 0;
+        }
+        &__info {
+            justify-content: space-between;
+            > *:not(:last-child) {
+                width: calc(33.33% - 14px);
+            }
+        }
+    }
+    @media (max-width: $device) {
+        flex-direction: column;
+        &__info {
+            width: 100%;
+        }
+        &__info-list li .additional-info__content {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &-reservation {
+            width: 100%;
+            margin-top: 0;
+            &__content li {
+                align-items: center;
+                &:not(:last-child) span {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    @media (max-width: $mobile) {
+        padding: 20px;
+        &__info >:not(:last-child) {
+            width: calc(50% - 10px);
+            max-width: none;
+        }
+        &__files {
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 0;
+            margin-top: 20px;
+            a:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+        &__total {
+            justify-content: flex-end;
+            .price {
+                margin-left: 40px;
+            }
+        }
+        &-reservation {
+            &__head {
+                padding-left: 20px;
+            }
+            &__content {
+                padding: 30px 20px;
+            }
+        }
+    }
+    @media (max-width: 479px) {
+        padding: 16px;
+        &__info-list li:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        &__total {
+            margin-top: 16px;
+            padding-top: 16px;
+        }
+        &-reservation__content {
+            padding: 24px 16px;
+            li {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+                &:not(:last-child) {
+                    margin-bottom: 16px;
+                    padding-bottom: 16px;
+                }
+            }
+        }
+    }
+    @media (max-width: 389px) {
+        &__cost h2 {
+            gap: 10px;
+        }
+    }
+    @media (max-width: 359px) {
+        &__info > :not(:last-child) {
+            width: 100%;
+            margin-top: 20px;
+        }
+        &__total {
+            justify-content: space-between;
+            .price {
+                margin-left: 0;
+            }
+        }
+        &__pay-date {
+            margin-left: -6px;
+        }
+        &-reservation {
+            &__head {
+                flex-direction: column;
+                align-items: center;
+                gap: 9px;
+            }
+            &__content li span {
+                font-size: 15px;
+                line-height: 20px;
+            }
+        }
+    }
+}

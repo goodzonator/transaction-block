@@ -1,0 +1,143 @@
+<div class="loader-wrap">
+    <div class="loader"></div>
+</div>
+
+<div class="container">
+    <div class="transaction">
+        <div class="transaction__info">
+            <div class="transaction__agreement">
+                <h2>Угода</h2>
+
+                <ul class="transaction__info-list">
+                    <li>
+                        <span>Номер угоди</span>
+                        <span>№ 1245 від 20.02.2022</span>
+                    </li>
+
+                    <li>
+                        <span>Загальна площа</span>
+                        <span>30.3323 га (3 ділянки)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="transaction__cost">
+                <h2>
+                    Вартість
+
+                    <span class="transaction__currency">
+                        <input type="radio" id="currency-uah" checked name="currency" value="uah">
+                        <label for="currency-uah" aria-label="Price UAH">
+                            <svg width="4" height="5">
+                                <use href="images/icons/icons.svg#uah"></use>
+                            </svg>
+                        </label>
+                        <input type="radio" id="currency-usd" name="currency" value="usd">
+                        <label for="currency-usd" aria-label="Price USD">
+                            <svg width="4" height="5">
+                                <use href="images/icons/icons.svg#usd"></use>
+                            </svg>
+                        </label>
+                    </span>
+                </h2>
+
+                <ul class="transaction__info-list">
+                    <li>
+                        <span>Комісія Твоє Коло</span>
+                        <span>
+                            <span data-usd="355 $" data-uah="14 773 ₴">14 773 ₴</span>
+                            <span class="transaction__pay-date">
+                                <span>Оплатити до 17.01.2023</span>
+                                <svg width="28" height="13">
+                                    <use href="images/icons/icons.svg#calendar"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Вартість ділянок</span>
+                        <span data-usd="25 703 $" data-uah="1 069 259 ₴">1 069  259 ₴</span>
+                    </li>
+
+                    <li>
+                        <span>Нотаріальні витрати</span>
+                        <span>
+                            <span data-usd="576 $" data-uah="24 007 ₴">24 007 ₴</span>
+                            <span class="additional-info">
+                                <svg width="9" height="9">
+                                    <use href="images/icons/icons.svg#info"></use>
+                                </svg>
+                                <span class="additional-info__content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Commodi enim error facere quam tempore!
+                                </span>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="transaction__files">
+                <a href="static/test-file.pdf" download>
+                    <svg width="11" height="11">
+                        <use href="images/icons/icons.svg#list"></use>
+                    </svg>
+                    Комерційна пропозиція
+                </a>
+
+                <a href="static/test-file.pdf" download>
+                    <svg width="11" height="11">
+                        <use href="images/icons/icons.svg#list"></use>
+                    </svg>
+                    Договір бронювання
+                </a>
+
+                <a href="static/test-file.pdf" class="dots" download>
+                    <svg width="11" height="11">
+                        <use href="images/icons/icons.svg#list-view"></use>
+                    </svg>
+                    Переглянути ділянки
+                </a>
+            </div>
+            <div class="transaction__total">
+                <span class="title">Загальна сума</span>
+                <span class="price" data-usd="26 635 <span>$</span>" data-uah="1 108 039 <span>₴</span>">1 108 039 <span>₴</span></span>
+            </div>
+        </div>
+        <div class="transaction-reservation">
+            <div class="transaction-reservation__head">
+                <h3>Бронювання ділянок</h3>
+                <div>
+                    <div class="steps">1/5</div>
+                    <div class="title">Етапи</div>
+                    <button class="settings" aria-label="Settings">
+                        <svg width="9" height="2">
+                            <use href="images/icons/icons.svg#dots"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <ul class="transaction-reservation__content">
+                <li>
+                    <span>
+                        У вас є <span class="main-color">договір про надання консультаційних послуг</span> на підпис
+                    </span>
+                    <a href="https://www.google.com/" target="_blank">
+                        Підписати у
+                        <svg width="47" height="10">
+                            <use href="images/icons/icons.svg#on-time"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <span>
+                        Очікуємо на оплату <span class="main-color">1 рахунку на <span data-usd="355 $" data-uah="14 773 ₴">14 773 ₴</span></span> комісії Твоє Коло
+                    </span>
+
+                    <a href="https://www.google.com/" target="_blank">Перейти до оплати</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
