@@ -403,7 +403,7 @@
         }
     }
     @media (max-width: 359px) {
-        &__info > :not(:last-child) {
+        &__info > :not(:last-child):not(:first-child) {
             width: 100%;
             margin-top: 20px;
         }
